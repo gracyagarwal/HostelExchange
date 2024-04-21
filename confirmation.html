@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelExchange</title>
+    <script src="https://kit.fontawesome.com/be8b019c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .conf-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .conf-container h1 {
+            color: #ff6b81;
+            font-size: 36px;
+        }
+
+        #order-details {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        #order-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #order-details ul li {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo-no-background.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact-Us</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="pfp"><a href="profile.html"><i class="fa-solid fa-user"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header">
+        <h2>#Visit Again</h2>
+        <p>eveything deserves a second chance</p>
+    </section>
+
+    <div class="conf-container">
+        <h1>Order Confirmed!!!</h1>
+
+        <div id="order-details">
+            <!-- Order details will be displayed here -->
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                displayOrderDetails();
+            });
+
+            function displayOrderDetails() {
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var orderDetails = {};
+
+                // Check if there are any query parameters
+                if (urlParams.has('orderDetails')) {
+                    var encodedOrderDetails = urlParams.get('orderDetails');
+                    orderDetails = JSON.parse(decodeURIComponent(encodedOrderDetails));
+                }
+
+                var orderDetailsDiv = document.getElementById('order-details');
+                if (Object.keys(orderDetails).length > 0) {
+                    // Construct HTML to display order details
+                    var html = '<h3>Order Details:</h3>';
+                    html += '<ul>';
+                    for (var key in orderDetails) {
+                        html += '<li>' + orderDetails[key] + '</li>';
+                    }
+                    html += '</ul>';
+                    orderDetailsDiv.innerHTML = html;
+                } else {
+                    // Display message if no order details found
+                    orderDetailsDiv.innerHTML = '<p>No items in this order.</p>';
+                }
+            }
+        </script>
+    </div>
+    
+
+
+    <script>
+        // Function to store order details in localStorage
+        function storeOrderDetails(orderDetails) {
+            // Check if localStorage is supported
+            if (typeof(Storage) !== "undefined") {
+                // Retrieve existing orders or initialize empty array
+                var orders = JSON.parse(localStorage.getItem('orders')) || [];
+                // Add new order to the array
+                orders.push(orderDetails);
+                // Store updated orders array in localStorage
+                localStorage.setItem('orders', JSON.stringify(orders));
+            } else {
+                alert("Sorry, your browser does not support web storage. Order details cannot be saved.");
+            }
+        }
+
+        // Call storeOrderDetails function when order is confirmed
+        document.addEventListener("DOMContentLoaded", function() {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var orderDetails = {};
+
+            // Check if there are any query parameters
+            if (urlParams.has('orderDetails')) {
+                var encodedOrderDetails = urlParams.get('orderDetails');
+                orderDetails = JSON.parse(decodeURIComponent(encodedOrderDetails));
+                storeOrderDetails(orderDetails);
+            }
+        });
+    </script>
+
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo-no-background.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> VIT VELLORE UNIVERSITY, KATPADI</p>
+            <p><strong>Phone:</strong> +01 2345 678 /(+91) 0123456789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>2024, Software Engineering Project</p>
+        </div>
+        
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelExchange</title>
+    <script src="https://kit.fontawesome.com/be8b019c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo-no-background.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact-Us</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="pfp"><a href="profile.html"><i class="fa-solid fa-user"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="" width="100%" id="MainImg" alt="">
+            <!-- <div class="small-img-group" id="smallImages">
+                
+                <div class="small-img-col" id="small1">
+                    <img src="img/products/f1-kettle.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col" id="small1">
+                    <img src="img/products/f1-kettle1.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col" id="small1">
+                    <img src="img/products/f1-kettle2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col" id="small1">
+                    <img src="img/products/f1-kettle3.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div> -->
+
+            <div class="small-img-group" id="smallImages">
+                <!-- Small images -->
+                <div class="small-img-col" id="small1">
+                    <img src="" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col" id="small2">
+                    <img src="" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col" id="small3">
+                    <img src="" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col" id="small4">
+                    <img src="" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="single-pro-details">
+            <h6>Home / Electonics</h6>
+            <h4 id="productName"></h4>
+            <h2 id="productPrice"></h2>
+            <button class="normal" onclick="addToCart(productId)">Add To Cart</button>
+            <!-- <a href="#" class="normal" onclick="addToCart(productId); return false;">Add To Cart</a> -->
+
+            <!-- <button class="normal" onclick="addToCart(productId, 'sproduct.html')">Add To Cart</button> -->
+            <h4>Product Details</h4>
+            <span id="productDescription"></span>
+            <h4>Seller Details</h4>
+            <span id="sellerdetails"></span>
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Other Products</h2>
+        <p>products loved in our community</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="img/products/f10-ket.jpg" alt="">
+                <div class="des">
+                    <span>Pigeon</span>
+                    <h5>Electric Kettle</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹800</h4>
+                </div>
+                <a href="#"><button class="addcart" ><i class="fa-solid fa-cart-shopping"></button></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f2-extension.png" alt="">
+                <div class="des">
+                    <span>GM 3060</span>
+                    <h5>Extension Board</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹250</h4>
+                </div>
+                <a href="#"><button class="addcart"><i class="fa-solid fa-cart-shopping"></button></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f9-yogamat.jpg" alt="">
+                <div class="des">
+                    <span>Bodyfit</span>
+                    <h5>Yogamat</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹340</h4>
+                </div>
+                <a href="#"><button class="addcart"><i class="fa-solid fa-cart-shopping"></button></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f5-jbl.jpg" alt="">
+                <div class="des">
+                    <span>JBL</span>
+                    <h5>Bluetooh headphones</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹3000</h4>
+                </div>
+                <a href="#"><button class="addcart"><i class="fa-solid fa-cart-shopping"></button></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo-no-background.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> VIT VELLORE UNIVERSITY, KATPADI</p>
+            <p><strong>Phone:</strong> +01 2345 678 /(+91) 0123456789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>2024, Software Engineering Project</p>
+        </div>
+        
+    </footer>
+
+    <script>
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function(){
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function(){
+            MainImg.src = smallimg[3].src;
+        }
+    </script>
+
+    <script>
+        // Function to extract URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the product ID from the URL
+        var productId = getParameterByName('id');
+
+        // Function to load product details based on ID
+        function loadProductDetails(productId) {
+            // You can fetch product details from a database or use predefined data
+            var productDetails = getProductDetails(productId);
+
+            // Update the DOM with product details
+            document.getElementById('MainImg').src = productDetails.image;
+            document.getElementById('productName').innerText = productDetails.name;
+            document.getElementById('productPrice').innerText = productDetails.price;
+            document.getElementById('productDescription').innerText = productDetails.description;
+            document.getElementById('sellerdetails').innerText = productDetails.seller;
+            // Update other elements with product details
+            loadSmallImages(productId);
+        }
+        function getProductDetails(productId) {
+            var products = {
+                1: {
+                    name: "Havells Electric Kettle",
+                    price: "₹1000",
+                    image: "img/products/f1-kettle.jpg",
+                    description: "Condition: Great. Auto shut off function. Integrated stainless steel function. 360° Cordless Kettle. 304 stainless steel interior with no plastic. Energy saving, cool touch outer body with no scalding hazard. Wide mouth for ease filling, pouring and cleaning.",
+                    seller: "Gracy Agarwal"
+                },
+                2: {
+                    name: "Extension Board",
+                    price: "₹250",
+                    image: "img/products/f2-extension.png",
+                    description: "Condition: Good. 4 socket extension cord."
+                    ,seller: "Arshia Shirish"
+                },
+                3: {
+                    name: "Engineering Mechanics Textbook",
+                    price: "₹300",
+                    image: "img/products/f3-mech.jpg",
+                    description: "Textbook in great condition with all pages intact."
+                    ,seller: "Mitali Paul"
+                },
+                
+            };
+
+            return products[productId];
+        }
+
+        // Function to load small images based on product ID
+        function loadSmallImages(productId) {
+            var smallImgUrls = getSmallImgUrls(productId);
+
+            // Loop through small image elements and set their source attributes
+            for (var i = 0; i < smallImgUrls.length; i++) {
+                var smallImg = document.getElementById('small' + (i + 1)).getElementsByTagName('img')[0];
+                smallImg.src = smallImgUrls[i];
+            }
+        }
+
+        // Function to get small image URLs based on product ID
+        function getSmallImgUrls(productId) {
+            // Define small image URLs for each product
+            var smallImgUrls = {
+                1: ["img/products/f1-kettle.jpg", "img/products/f1-kettle1.jpg", "img/products/f1-kettle2.jpg", "img/products/f1-kettle3.jpg"],
+                2: ["img/products/f2-extension.png", "img/products/f2-extension2.jpg", "img/products/f2-extension3.jpg", "img/products/f2-extension4.jpg"],
+                3: ["img/products/f3-mech.jpg", "img/products/f3-mech1.jpg", "img/products/f3-mech2.jpg", "img/products/f3-mech3.jpg"],
+                // Add more small image URLs for other products as needed
+            };
+
+            return smallImgUrls[productId];
+        }
+
+        // Load product details when the page is ready
+        document.addEventListener("DOMContentLoaded", function() {
+            loadProductDetails(productId);
+        });
+    </script>
+
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

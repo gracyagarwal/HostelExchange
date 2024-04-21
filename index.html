@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelExchange</title>
+    <script src="https://kit.fontawesome.com/be8b019c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="img/logo-no-background.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact-Us</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="pfp"><a href="profile.html"><i class="fa-solid fa-user"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h4>Welcome to HostelExchange</h4>
+        <h2>Buy, Sell, or Exchange</h2>
+        <h1>Second-hand Products</h1>
+        <p>Find great deals on electronics, books, mattresses, and more!</p>
+        <button onclick="openRegistrationPage()">Register Now</button>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="img/features/f1.png" alt="">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f2.png" alt="">
+            <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f3.png" alt="">
+            <h6>Save Money</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f5.png" alt="">
+            <h6>Happy Sell</h6>
+        </div>
+    </section>
+
+    <!-- <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Discover top picks from our community</p>
+        <div class="pro-container">
+            <div class="pro" onclick="viewProductDetails(1)">
+                <img src="img/products/f1-kettle.jpg" alt="">
+                <div class="des">
+                    <span>Havells</span>
+                    <h5>Havells Electric Kettle</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹1000</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro" onclick="viewProductDetails(2)">
+                <img src="img/products/f2-extension.png" alt="">
+                <div class="des">
+                    <span>GM 3060</span>
+                    <h5>Extension Board</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹250</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro" onclick="viewProductDetails(3)">
+                <img src="img/products/f3-mech.jpg" alt="">
+                <div class="des">
+                    <span>Pearson</span>
+                    <h5>Engineering Mechanics Textbook</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹300</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f4-studytable.jpg" alt="">
+                <div class="des">
+                    <span>Basics</span>
+                    <h5>Foldable Laptop Table</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹400</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f5-jbl.jpg" alt="">
+                <div class="des">
+                    <span>JBL</span>
+                    <h5>Bluetooth Headphones</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹3000</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f6-bag.jpg" alt="">
+                <div class="des">
+                    <span>Puma</span>
+                    <h5>Backpack</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹300</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f7-comf.jpg" alt="">
+                <div class="des">
+                    <span>Homecenter</span>
+                    <h5>Single bed comforter</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹1000</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f8-deskorg.jpg" alt="">
+                <div class="des">
+                    <span>Amazon</span>
+                    <h5>Desktop Organizer</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹150</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            <div class="pro" onclick="viewProductDetails(1)">
+                <img src="img/products/f1-kettle.jpg" alt="">
+                <div class="des">
+                    <span>Havells</span>
+                    <h5>Havells Electric Kettle</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹1000</h4>
+                </div>
+                <a href="#" onclick="addToCart(1)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+                <!-- <a href="#" onclick="addToCart(1, 'shop.html')"><i class="fa-solid fa-cart-shopping"></i></button></a> -->
+            </div>
+            <div class="pro" onclick="viewProductDetails(2)">
+                <img src="img/products/f2-extension.png" alt="">
+                <div class="des">
+                    <span>GM 3060</span>
+                    <h5>Extension Board</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹250</h4>
+                </div>
+                <a href="#" onclick="addToCart(2)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+            <div class="pro" onclick="viewProductDetails(3)">
+                <img src="img/products/f3-mech.jpg" alt="">
+                <div class="des">
+                    <span>Pearson</span>
+                    <h5>Engineering Mechanics Textbook</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹300</h4>
+                </div>
+                <a href="#" onclick="addToCart(3)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f4-studytable.jpg" alt="">
+                <div class="des">
+                    <span>Basics</span>
+                    <h5>Foldable Laptop Table</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹400</h4>
+                </div>
+                <a href="#" onclick="addToCart(4)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f5-jbl.jpg" alt="">
+                <div class="des">
+                    <span>JBL</span>
+                    <h5>Bluetooth Headphones</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹3000</h4>
+                </div>
+                <a href="#" onclick="addToCart(5)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f6-bag.jpg" alt="">
+                <div class="des">
+                    <span>Puma</span>
+                    <h5>Backpack</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹300</h4>
+                </div>
+                <a href="#" onclick="addToCart(6)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f7-comf.jpg" alt="">
+                <div class="des">
+                    <span>Homecenter</span>
+                    <h5>Single bed comforter</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹1000</h4>
+                </div>
+                <a href="#" onclick="addToCart(7)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f8-deskorg.jpg" alt="">
+                <div class="des">
+                    <span>Amazon</span>
+                    <h5>Desktop Organizer</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4>₹150</h4>
+                </div>
+                <a href="#" onclick="addToCart(8)"><i class="fa-solid fa-cart-shopping"></i></button></a>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo-no-background.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> VIT VELLORE UNIVERSITY, KATPADI</p>
+            <p><strong>Phone:</strong> +01 2345 678 /(+91) 0123456789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>2024, Software Engineering Project</p>
+        </div>
+        
+    </footer>
+
+    <script>
+        function viewProductDetails(productId) {
+            
+            var productSections = document.querySelectorAll('.pro-container .pro');
+            productSections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            var selectedProduct = document.getElementById('product' + productId);
+            if (selectedProduct) {
+                selectedProduct.style.display = 'block';
+            }
+            window.location.href = 'sproduct.html?id=' + productId;
+        }
+    </script>
+
+    <script>
+        function openRegistrationPage() {
+            window.location.href = 'register.html';
+        }
+    </script>
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

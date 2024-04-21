@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(img/products/register.jpg); 
+            background-size: cover;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+    
+        h2 {
+            text-align: center;
+            color: #4e7aaf; 
+            margin-bottom: 30px;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e8f3ff; /* Soft lavender input background */
+            transition: background-color 0.3s ease;
+        }
+    
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="password"]:focus {
+            background-color: #fff; /* White input background on focus */
+            box-shadow: 0 0 10px rgba(78, 122, 175, 0.3); /* Softer blue shadow on focus */
+        }
+    
+        button[type="submit"],
+        button[type="button"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4e7aaf; /* Soft pink button background */
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        button[type="button"] {
+            margin-top: 10px;
+            background-color: #6499d1; /* Lighter pink for register later button */
+        }
+    
+        button[type="submit"]:hover,
+        button[type="button"]:hover {
+            background-color: #3a628f; /* Softer pink on hover */
+        }
+    
+        input:focus,
+        button:focus {
+            outline: none;
+        }
+    
+        /* Error message */
+        .error-message {
+            color: #e65176; /* Soft pink error text */
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    
+        /* Validation checkmark */
+        .valid {
+            position: relative;
+        }
+    
+        .valid::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #5cb85c; /* Green checkmark */
+            font-size: 16px;
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="container">
+        <h2>Register Here</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Name" required pattern="[A-Za-z\s]+" title="Name should not include digits">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone" required pattern="[0-9]{10}" title="Phone number must be 10 digits">
+            <input type="password" id="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" title="Password must be at least 8 characters long, contain at least one digit, one uppercase letter, one lowercase letter, and one special character">
+            <button type="submit">Register</button>
+            <button type="button" onclick="redirectToIndex()">Register Later</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+
+            // Validate name
+            if (!/^[A-Za-z\s]+$/.test(name)) {
+                alert("Name should not include digits");
+                return false;
+            }
+
+            // Validate email
+            if (!/\S+@\S+\.\S+/.test(email)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            // Validate phone number
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Phone number must be 10 digits");
+                return false;
+            }
+
+            // Validate password
+            if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/.test(password)) {
+                alert("Password must be at least 8 characters long, contain at least one digit, one uppercase letter, one lowercase letter, and one special character");
+                return false;
+            }
+            redirectToIndex();
+            return true;
+        }
+        function redirectToIndex() {
+            window.location.href = "index.html"; // Change "index.html" to your actual index page
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelExchange</title>
+    <script src="https://kit.fontawesome.com/be8b019c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo-no-background.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact-Us</a></li>
+                <li id="lg-bag"><a class="active" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="pfp"><a href="profile.html"><i class="fa-solid fa-user"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header">
+        <h2>Shopping Cart</h2>
+        <!-- <p>eveything deserves a second chance</p> -->
+    </section>
+
+    
+    <ul id="cart-items">
+        <!-- Cart items will be dynamically added here using JavaScript -->
+    </ul>
+
+    <div id="subtotal">
+        <!-- Subtotal will be displayed here -->
+    </div>
+
+    <div id="order-button-container">
+        <button id="order-now-button" onclick="openConfirmationModal()">Order Now</button>
+    </div>
+    
+
+    <!-- Modal dialog for order confirmation -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeConfirmationModal()">&times;</span>
+            <p>Are you sure you want to place the order?</p>
+            <button id="order-now-button" onclick="confirmOrder()">Yes</button>
+            <button id="order-now-button" onclick="closeConfirmationModal()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function openConfirmationModal() {
+            var modal = document.getElementById('confirmationModal');
+            modal.style.display = 'block';
+        }
+    
+        function closeConfirmationModal() {
+            var modal = document.getElementById('confirmationModal');
+            modal.style.display = 'none';
+        }
+    
+        function confirmOrder() {
+            // Get order details from localStorage
+            var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            console.log('Cart Items:', cartItems); // Check if cartItems contains the correct data
+
+            // Check if cart is empty
+            if (!cartItems || cartItems.length === 0) {
+                // Display message or perform action for empty cart
+                alert('Your cart is empty. Please add items to your cart before placing an order.');
+                return;
+            }
+
+            // Redirect to confirmation page with order details as query parameters
+            var orderDetails = {};
+            if (cartItems && cartItems.length > 0) {
+                cartItems.forEach(function(item, index) {
+                    orderDetails['Item ' + (index + 1)] = item.name + ' - Quantity: ' + item.quantity;
+                });
+            }
+            console.log('Order Details:', orderDetails); // Check if orderDetails contains the correct data
+
+            var queryString = 'orderDetails=' + encodeURIComponent(JSON.stringify(orderDetails));
+            console.log('Query String:', queryString); // Check if the query string is constructed correctly
+
+            // Redirect to confirmation page with query parameters
+            window.location.href = 'confirmation.html?' + queryString;
+
+            // Clear the cart items from localStorage after redirecting
+            localStorage.removeItem('cartItems');
+        }
+
+
+    </script> 
+
+    <script>
+        // Function to display cart items on the cart page
+        function displayCartItems() {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            var subtotal = 0;
+            var cartList = document.getElementById('cart-items');
+            cartList.innerHTML = '';
+            if (cartItems && cartItems.length > 0) {
+                cartItems.forEach(function(item, index) {
+                    var li = document.createElement('li');
+                    li.classList.add('cart-item');
+                    li.innerHTML = `
+                        <div class="cart-item-info">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="cart-item-details">
+                                <strong>${item.name}</strong><br>
+                                Price: ${item.price}<br>
+                                Quantity: ${item.quantity}
+                            </div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <button class="remove-button" onclick="removeFromCart(${index})">Remove</button>
+                            <button onclick="increaseQuantity(${index})">+</button>
+                            <button onclick="decreaseQuantity(${index})">-</button>
+                        </div>
+                    `;
+                    cartList.appendChild(li);
+                    subtotal += parseFloat(item.price.replace('₹', '')) * item.quantity;
+                });
+            } else {
+                var li = document.createElement('li');
+                li.textContent = 'Your cart is empty';
+                cartList.appendChild(li);
+            }
+
+            // Display subtotal
+            var subtotalElement = document.getElementById('subtotal');
+            subtotalElement.innerHTML = 'Subtotal: ₹' + subtotal.toFixed(2);
+        }
+
+
+        // Function to remove item from the cart
+        function removeFromCart(index) {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        // Function to increase quantity of an item
+        function increaseQuantity(index) {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            cartItems[index].quantity++;
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        // Function to decrease quantity of an item
+        function decreaseQuantity(index) {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            if (cartItems[index].quantity > 1) {
+                cartItems[index].quantity--;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                displayCartItems();
+            } else {
+                removeFromCart(index);
+            }
+        }
+
+        // Load cart items when the page is ready
+        document.addEventListener("DOMContentLoaded", function() {
+            displayCartItems();
+        });
+
+        
+    </script>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo-no-background.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> VIT VELLORE UNIVERSITY, KATPADI</p>
+            <p><strong>Phone:</strong> +01 2345 678 /(+91) 0123456789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>2024, Software Engineering Project</p>
+        </div>
+        
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

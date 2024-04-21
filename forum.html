@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelExchange</title>
+    <script src="https://kit.fontawesome.com/be8b019c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for the forum section */
+        #reviews {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9; /* Light gray background */
+        }
+
+        #reviews h3 {
+            color: #4e7aaf; /* Soft blue title */
+            margin-bottom: 15px;
+        }
+
+        #review-form {
+            margin-top: 20px;
+        }
+
+        #review-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555555; /* Sage green */
+        }
+
+        #review-form input[type="text"],
+        #review-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #review-form button[type="submit"] {
+            background-color: #088178; /* Dark green button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #review-form button[type="submit"]:hover {
+            background-color: #4e7aaf; /* Darker blue on hover */
+        }
+
+        .review {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            margin: 0;
+        }
+
+        .review p strong {
+            font-weight: bold;
+            margin-right: 5px;
+            color: #555555; /* Sage green */
+        }
+
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo-no-background.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a class="active" href="forum.html">Forum</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="contact.html">Contact-Us</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="pfp"><a href="profile.html"><i class="fa-solid fa-user"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header">
+        <h2>#Forum</h2>
+        <p>place for you to read and leave reviews</p>
+    </section>
+
+    <section id="reviews">
+        <h3>Customer Reviews</h3>
+        <div id="reviews-container">
+            <!-- Existing reviews will be displayed here -->
+        </div>
+
+        <!-- Form for users to leave a review -->
+        <form id="review-form">
+            <label for="username">Your Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <label for="product">Product Name:</label>
+            <textarea id="product" name="product" required></textarea>
+
+            <label for="comment">Your Review:</label>
+            <textarea id="comment" name="comment" required></textarea>
+
+            <button type="submit" class="normal">Submit Review</button>
+        </form>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo-no-background.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> VIT VELLORE UNIVERSITY, KATPADI</p>
+            <p><strong>Phone:</strong> +01 2345 678 /(+91) 0123456789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>2024, Software Engineering Project</p>
+        </div>
+        
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            displayReviews(); // Display existing reviews when page loads
+        });
+
+        // Function to display existing reviews
+        function displayReviews() {
+            const reviewsContainer = document.getElementById('reviews-container');
+            reviewsContainer.innerHTML = ''; // Clear previous reviews
+
+            // Retrieve reviews from localStorage
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            if (reviews.length === 0) {
+                reviewsContainer.innerHTML = '<p>No reviews yet.</p>';
+                return;
+            }
+
+            // Display each review
+            reviews.forEach(function(review) {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.classList.add('review');
+                reviewDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${review.username}</p>
+                    <p><strong>Rating:</strong> ${review.rating}</p>
+                    <p><strong>Product Name:</strong> ${review.product}</p>
+                    <p><strong>Review:</strong> ${review.comment}</p>
+                `;
+                reviewsContainer.appendChild(reviewDiv);
+            });
+        }
+
+        // Function to handle form submission
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get review details from the form
+            const username = document.getElementById('username').value;
+            const rating = document.getElementById('rating').value;
+            const product = document.getElementById('product').value;
+            const comment = document.getElementById('comment').value;
+
+            // Create an object to hold the review details
+            const review = {
+                username: username,
+                rating: rating,
+                product: product,
+                comment: comment
+            };
+
+            // Retrieve existing reviews from localStorage
+            let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            // Add the new review to the reviews array
+            reviews.push(review);
+
+            // Store the updated reviews array in localStorage
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            // Display the updated reviews
+            displayReviews();
+
+            // Reset the form
+            document.getElementById('review-form').reset();
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
